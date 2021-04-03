@@ -55,7 +55,7 @@ public class Intake_Subsystem extends SubsystemBase {
   }
 
   public void open_Intake() {
-   // m_intake_solenoid.set(Value.kForward);
+    m_intake_solenoid.set(Value.kForward);
     intake_pneumatic_state = true;
   }
 

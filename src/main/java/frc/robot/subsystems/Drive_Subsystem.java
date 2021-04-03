@@ -112,7 +112,6 @@ public class Drive_Subsystem extends SubsystemBase {
     SmartDashboard.putData("Field", m_field);
 
 
-
   }
 
 
@@ -121,9 +120,9 @@ public class Drive_Subsystem extends SubsystemBase {
     m_odometry.update(Rotation2d.fromDegrees(getHeading()), 
     getLeftEncoderDistance(), 
     getRightEncoderDistance());
+
     System.out.println(getPose());
     m_field.setRobotPose(m_odometry.getPoseMeters());
-
 
   }
 
@@ -235,14 +234,21 @@ public class Drive_Subsystem extends SubsystemBase {
         rightFeedForwardVolts);
   }
 
-  public void resetOdometry() {
+  public void resetOdometry(double start_x, double start_y) {
     resetEncoders();
     zeroHeading();
-    m_odometry.resetPosition(new Pose2d(0.762, 0.762, Rotation2d.fromDegrees(0)), Rotation2d.fromDegrees(0));
+    m_odometry.resetPosition(new Pose2d(start_x, start_y, Rotation2d.fromDegrees(0)), Rotation2d.fromDegrees(0));  
     System.out.print("resseeet");
 
   }
 
+  public void resetOdometry() {
+    resetEncoders();
+    zeroHeading();
+    m_odometry.resetPosition(new Pose2d(0, 0, Rotation2d.fromDegrees(0)), Rotation2d.fromDegrees(0));  
+    System.out.print("resseeet");
+
+  }
 
 
 

@@ -61,13 +61,13 @@ public class Robot extends TimedRobot {
   @Override
   public void autonomousInit() {
     m_autonomousCommand = m_robotContainer.getAutonomousCommand();
-    m_robotContainer.m_drive.m_gyro.reset();
-    m_robotContainer.m_drive.resetOdometry();
+    m_robotContainer.m_drive.m_gyro.reset();          //reset autometry auto chooser a taşındı
     m_robotContainer.m_drive.setBrake();
     m_robotContainer.m_drive.m_gyro.reset();          
 
-
     m_robotContainer.m_drive.setVoltageComp();
+
+    m_robotContainer.m_intake.close_Intake();
 
 
     if (m_autonomousCommand != null) {

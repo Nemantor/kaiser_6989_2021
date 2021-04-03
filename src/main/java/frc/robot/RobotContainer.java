@@ -59,7 +59,7 @@ public class RobotContainer {
 
 
   private void configureButtonBindings() {
-    new JoystickButton(driver_Controller, XboxController.Button.kX.value).whenPressed(new ShootCommand(m_shooter));
+    new JoystickButton(driver_Controller, XboxController.Button.kX.value).whenPressed(new ShootCommand(m_shooter));                                 //çalışmıyor düzeltilnesi lazım 
     new JoystickButton(driver_Controller, XboxController.Button.kBumperLeft.value).whileHeld(new IndexCommand(m_indexer, m_shooter, m_intake));
 
     new JoystickButton(driver_Controller, XboxController.Button.kA.value).whenPressed(new IntakeCommand(m_intake));
@@ -67,14 +67,13 @@ public class RobotContainer {
 
     new JoystickButton(driver_Controller, 10).whenPressed(() -> m_drive.changeSlowMode());
 
-   // new JoystickButton(driver_Controller,XboxController.Button.kY.value).whileHeld(new ClimbUpCommand(m_winch));
-    //new JoystickButton(driver_Controller,XboxController.Button.kB.value).whileHeld(new ClimbDownCommand(m_winch));
+    //new JoystickButton(driver_Controller,XboxController.Button.kY.value).whileHeld(new ClimbUpCommand(m_winch));       // yanlış yerdeler
+    //new JoystickButton(driver_Controller,XboxController.Button.kB.value).whileHeld(new ClimbDownCommand(m_winch));     //yanlış yerdeler
 
 
   }
 
   private void configureDriverDashboard() {
-    // Auto chooser
     autoGenerator.addDashboardWidgets(driverTab);
   }
 

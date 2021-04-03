@@ -169,6 +169,7 @@ return new InstantCommand(m_intake::open_Intake, m_intake)
 
   private Command pathfromJSON() {
 
+
     String trajectoryJSON = "output/Unnamed_1.wpilib.json";
     Trajectory trajectory = new Trajectory();
 
@@ -181,6 +182,8 @@ return new InstantCommand(m_intake::open_Intake, m_intake)
 
 
     var center_go = m_drive.createCommandForTrajectory(trajectory);
+
+    m_drive.resetOdometry(0.76 , 0.76); 
 
     return center_go
 
