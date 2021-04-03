@@ -43,7 +43,6 @@ public class Drive_Subsystem extends SubsystemBase {
 
   public final AHRS m_gyro = new AHRS(SPI.Port.kMXP);
 
-
   private double target;
   private boolean isSlowMode = false;
 
@@ -54,7 +53,7 @@ public class Drive_Subsystem extends SubsystemBase {
           DCMotor.getCIM(2),
           10.71,
           9.1,
-          60,
+          70,
           Units.inchesToMeters(3),
           0.65,
           null
@@ -86,7 +85,7 @@ public class Drive_Subsystem extends SubsystemBase {
 
     resetEncoders();
 
-    right_Master_Motor.setInverted(false);
+    right_Master_Motor.setInverted(true);
     left_Master_Motor.setInverted(false);
 
     left_Slave_Motor.setInverted(false);
@@ -104,12 +103,8 @@ public class Drive_Subsystem extends SubsystemBase {
     left_Master_Motor.configSelectedFeedbackSensor(FeedbackDevice.CTRE_MagEncoder_Relative, 0, 10);
     right_Master_Motor.configSelectedFeedbackSensor(FeedbackDevice.CTRE_MagEncoder_Relative, 0, 10);
 
-    left_Master_Motor.setSensorPhase(true);
-    right_Master_Motor.setSensorPhase(true);
-    
-    right_Master_Motor.setInverted(true);
-
     SmartDashboard.putData("Field", m_field);
+
 
 
   }
@@ -132,7 +127,10 @@ public class Drive_Subsystem extends SubsystemBase {
     // Set the inputs to the system. Note that we need to use
     // the output voltage, NOT the percent output.
     m_drive_sim.setInputs(left_Master_Motor.getMotorOutputVoltage(),
-                         right_Master_Motor.getMotorOutputVoltage()); //Right side is inverted, so forward is negative voltage
+                          right_Master_Motor.getMotorOutputVoltage()); //Right side is inverted, so forward is negative voltage
+
+    System.out.print(left_Master_Motor.getMotorOutputVoltage());
+    System.out.print(right_Master_Motor.getMotorOutputVoltage());
 
     // Advance the model by 20 ms. Note that if you are running this
     // subsystem in a separate thread or have changed the nominal timestep
