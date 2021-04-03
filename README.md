@@ -5,6 +5,5 @@ Kaiser 2021 programming repository
 Simulation hala test aşamasında çalışmıyor
 
 
-<img src="https://media.giphy.com/media/k4WJNi5BEzScydF1zJ/giphy.gif" />
-
+![otonom test](https://media.giphy.com/media/k4WJNi5BEzScydF1zJ/giphy.gif)
 
