@@ -30,7 +30,7 @@ public class Robot extends TimedRobot {
   public void robotInit() {
     
     m_robotContainer = new RobotContainer();
-    m_robotContainer.c.setClosedLoopControl(true);          //yeni ekleme anlamsız bir şeyler
+    m_robotContainer.c.setClosedLoopControl(true);          
 
 
   }
@@ -64,7 +64,7 @@ public class Robot extends TimedRobot {
     m_robotContainer.m_drive.m_gyro.reset();
     m_robotContainer.m_drive.resetOdometry();
     m_robotContainer.m_drive.setBrake();
-    m_robotContainer.m_drive.m_gyro.reset();          ////anlamsız değişim
+    m_robotContainer.m_drive.m_gyro.reset();          
 
 
     m_robotContainer.m_drive.setVoltageComp();
