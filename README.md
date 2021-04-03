@@ -3,3 +3,8 @@ Kaiser 2021 programming repository
 
 
 Simulation hala test aşamasında çalışmıyor
+
+
+<img src="https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif" />
+
+
